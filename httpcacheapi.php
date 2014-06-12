@@ -43,3 +43,4 @@ function process_cache($expire=300){
 }
 
 //if(is_cacheable()){process_cache(60*5);}
+//echo time();
