@@ -38,6 +38,7 @@ function process_cache($expire=300){
 		header('Last-Modified: '.gmdate('D, d M Y H:i:s', $client_time).' GMT', true, 304);
 		exit(0);
 	}else{
+		header('Cache-Control: public');
 		header('Last-Modified: '.gmdate('D, d M Y H:i:s', $now).' GMT', true, 200);
 	}
 }
