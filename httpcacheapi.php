@@ -13,6 +13,7 @@ function apache_request_headers() {
   foreach($_SERVER as $key => $val) {
     if( preg_match($rx_http, $key) ) {
       $arh_key = preg_replace($rx_http, '', $key);
+      $arh_key = strtolower($arh_key);//debug
       $rx_matches = array();
       // do some nasty string manipulations to restore the original letter case
       // this should work in most cases
@@ -21,7 +22,7 @@ function apache_request_headers() {
         foreach($rx_matches as $ak_key => $ak_val) $rx_matches[$ak_key] = ucfirst($ak_val);
         $arh_key = implode('-', $rx_matches);
       }
-      if($arh_key=='IF-MODIFIED-SINCE')$arh_key='If-Modified-Since';//debug
+      //if($arh_key=='IF-MODIFIED-SINCE')$arh_key='If-Modified-Since';//debug
       $arh[$arh_key] = $val;
     }
   }
