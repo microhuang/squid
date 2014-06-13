@@ -1,6 +1,9 @@
 squid <2.7>
 =====
 
+http://people.redhat.com/jskala/squid/squid-2.7.STABLE9-1.el5/src/squid-2.7.STABLE9-1.el5.src.rpm   可用于centos6
+======
+
 
 ./configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --target=x86_64-redhat-linux-gnu --program-prefix= --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --exec_prefix=/usr --libexecdir=/usr/lib64/squid --localstatedir=/var --datadir=/usr/share/squid --sysconfdir=/etc/squid
 
