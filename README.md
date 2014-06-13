@@ -36,4 +36,8 @@ cache_log /var/logs/squid/cache.log
 cache_store_log /var/logs/squid/store.log
 #pid_filename /var/run/squid/squid.pid
 cache_peer 127.0.0.1 parent 808 0 no-query no-digest originserver name=www
+#refresh_pattern -i .* 180 100% 180 stale-while-revalidate=86400      #异步回源
+#offline_mode on                                                      #不进行cache验证
 http_access allow all
+
+
