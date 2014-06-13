@@ -18,3 +18,22 @@ http_access allow all
 #refresh_pattern -i .* 1440 100% 10080 override-expire override-lastmod reload-into-ims ignore-reload ignore-no-cache ignore-private
 #cache_log /var/log/squid/cache.log
 #cache_dir ufs /var/spool/squid 100 16 256
+
+
+
+
+
+
+
+
+http_port 80 accel  vhost vport
+visible_hostname cdn.molbase.com
+cache_effective_user squid
+#cache_dir ufs /var/spool/squid 100 16 256
+cache_dir ufs /var/cache/squid 100 16 256
+access_log /var/logs/squid/access.log squid
+cache_log /var/logs/squid/cache.log
+cache_store_log /var/logs/squid/store.log
+#pid_filename /var/run/squid/squid.pid
+cache_peer 127.0.0.1 parent 808 0 no-query no-digest originserver name=www
+http_access allow all
