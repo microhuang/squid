@@ -41,3 +41,8 @@ cache_peer 127.0.0.1 parent 808 0 no-query no-digest originserver name=www
 http_access allow all
 
 
+
+
+
+#X-Cache: cache命中
+#X-Cache-Lookup: 回源后，后端响应无更新，再从cache命中返回
