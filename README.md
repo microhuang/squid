@@ -2,6 +2,9 @@ squid <2.7>
 =====
 
 
+./configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --target=x86_64-redhat-linux-gnu --program-prefix= --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --exec_prefix=/usr --libexecdir=/usr/lib64/squid --localstatedir=/var --datadir=/usr/share/squid --sysconfdir=/etc/squid
+
+
 http_port 80 accel  vhost vport
 visible_hostname cdn.server.com
 cache_peer 127.0.0.1 parent 808 0 no-query no-digest originserver name=www
