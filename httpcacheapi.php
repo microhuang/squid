@@ -35,6 +35,16 @@ function process_cache($expire=300){
 	$client_time = (isset($headers['If-Modified-Since']) ? strtotime($headers['If-Modified-Since']) : 0);
 	$now=gmmktime();
 	$now_list=gmmktime()-$expire;
+	foreach($headers as $k=>$v){
+		$vary=', ';
+		if(substr($k,0,5)=='Vary-'){
+			$vary+=substr($k,5).', ';
+		}
+		if($vary){
+			$vary=trim($vary,', ');
+			header('Vary: '.$vary);  #通知cache，Vary域字段值作为key因子 -- squid
+		}
+	}
 	if ($client_time<$now and $client_time >$now_list){
 		header('Cache-Control: public');
 		header('Pragma: public');
