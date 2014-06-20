@@ -48,11 +48,13 @@ function process_cache($expire=300){
 	if ($client_time<$now and $client_time >$now_list){
 		header('Cache-Control: public');
 		header('Pragma: public');
+		header('Expires: '.gmdate('D, d M Y H:i:s', $client_time+$expire).' GMT');
 		header('Last-Modified: '.gmdate('D, d M Y H:i:s', $client_time).' GMT', true, 304);
 		exit(0);
 	}else{
 		header('Cache-Control: public');
 		header('Pragma: public');
+		header('Expires: '.gmdate('D, d M Y H:i:s', $now+$expire).' GMT');
 		header('Last-Modified: '.gmdate('D, d M Y H:i:s', $now).' GMT', true, 200);
 	}
 }
