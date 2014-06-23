@@ -42,7 +42,7 @@ function process_cache($expire=300){
 		}
 		if($vary){
 			$vary=trim($vary,', ');
-			header('Vary: '.$vary);  #通知cache，Vary域字段值作为key因子 -- squid
+			header('Vary: '.$vary, false);  #通知cache，Vary域字段值作为key因子 -- squid
 		}
 	}
 	if ($client_time<$now and $client_time >$now_list){
